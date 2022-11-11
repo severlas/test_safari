@@ -15,7 +15,7 @@ class BaseAnimal:
     """Basic function to move the animal around the board"""
     def _move(self, row: int, column: int) -> bool:
         cell = self.board_at_start[row][column]
-        if self.STRENGTH > VALUES_CALL.get(cell).STRENGTH and cell != '_':
+        if self.STRENGTH > CELL_VALUES.get(cell).STRENGTH and cell != '_':
             self.board_at_start[row][column] = '_'
             return True
 
@@ -88,7 +88,7 @@ class Lion(BaseAnimal):
     STRENGTH: int = 4
 
 
-VALUES_CALL = {
+CELL_VALUES = {
         '_': BaseAnimal,
         'D': Deer,
         'W': Wolf,

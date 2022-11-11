@@ -1,5 +1,5 @@
 from board import Board
-from animals import VALUES_CALL
+from animals import CELL_VALUES
 import random
 
 
@@ -25,7 +25,7 @@ def start_safari():
     print(board.output_chosen_cell(row=row, column=column, cell_value=cell_value))
 
     # Create animal by the value in the cell
-    animal = VALUES_CALL.get(cell_value)(board=board, board_at_start=board_at_start)
+    animal = CELL_VALUES.get(cell_value)(board=board, board_at_start=board_at_start)
 
     # Determine which continuous cells the selected animal can conquer
     board_at_finish = animal.tries_to_conquer(row=row, column=column)
